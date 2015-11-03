@@ -7,6 +7,7 @@ for character in plaintext.lower():
 	if character == ' ':
 		ciphertext += ' '
 	else:
-		ciphertext += alphabet[(alphabet.index(character) + shift) % len(alphabet)]
+		newCharacterIndex = (alphabet.index(character) + shift) % len(alphabet)
+		ciphertext += alphabet[newCharacterIndex]
 
 print(ciphertext)
