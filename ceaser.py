@@ -8,6 +8,7 @@ def encrypt(plaintext):
 		if character == ' ':
 			ciphertext += ' '
 		else:
+			assert (character.isalpha()), "The symbol " + character + " is not in my alphabet. Cannot encrypt. "
 			shiftedCharacterIndex = (alphabet.index(character) + shift) % len(alphabet)
 			ciphertext += alphabet[shiftedCharacterIndex]
 	return ciphertext
