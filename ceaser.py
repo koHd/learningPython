@@ -2,7 +2,8 @@ import string
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 punctuationSymbols = set(string.punctuation)
-plaintext = input("Input the message: ")
+file = open("plaintext.txt")
+plaintext = file.read()
 shift = int(input("Choose a shift value: "))
 
 def shiftCharacter(character, shift):
