@@ -3,7 +3,6 @@ import string
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 punctuationSymbols = set(string.punctuation)
 plaintextFile = open("plaintext.txt")
-plaintext = plaintextFile.read()
 shift = int(input("Choose a shift value: "))
 
 def shiftCharacter(character, shift):
@@ -22,4 +21,4 @@ def encrypt(plaintext, shift):
 	return ciphertext
 
 ciphertextFile = open("ciphertext.txt", "w")
-ciphertextFile.write(encrypt(plaintext, shift))
+ciphertextFile.write(encrypt(plaintextFile.read(), shift))
