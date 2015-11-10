@@ -3,13 +3,14 @@ import argparse
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 punctuationSymbols = set(string.punctuation)
-shift = int(input("Choose a shift value: "))
 
 parser = argparse.ArgumentParser(description='Shift encrypt a plaintext file.')
 parser.add_argument('-p', '--plaintext', help='Input plaintext file name', required=True)
+parser.add_argument('-s', '--shift', type=int, help='Size of the ceaser shift', required=True)
 parser.add_argument('-c', '--ciphertext', help='Name for ciphertext file', required=True)
 args = parser.parse_args()
 plaintextFile = open(args.plaintext)
+shift = args.shift
 ciphertextFile = open(args.ciphertext, "w")
 
 def shiftCharacter(character, shift):
