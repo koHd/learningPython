@@ -1,9 +1,14 @@
 import string
+import argparse
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 punctuationSymbols = set(string.punctuation)
-plaintextFile = open("plaintext.txt")
 shift = int(input("Choose a shift value: "))
+
+parser = argparse.ArgumentParser(description='Shift encrypt a plaintext file.')
+parser.add_argument('-i', '--input', help='Input file name', required=True)
+args = parser.parse_args()
+plaintextFile = open(args.input)
 
 def shiftCharacter(character, shift):
 	assert (character.isalpha()), "The symbol '" + character + "' is not in my alphabet. Cannot encrypt. "
